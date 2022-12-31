@@ -9,7 +9,7 @@ const NftCard = ({ image, id, title, address, description, attributes }) => {
                         <p>{`${id.slice(0, 4)}...${id.slice(id.length - 4)}`}</p>
                     </div>
                     <div className="flex mr-3">
-                        <a target="_blank" className="text-green-700" href={`https://etherscan.io/token/${address}`}>{`${address.slice(0, 4)}...${address.slice(address.length - 4)}`}</a>
+                        <a target="_blank" className="text-blue-700" href={`https://mumbai.polygonscan.com/address/${address}`}>{`${address.slice(0, 4)}...${address.slice(address.length - 4)}`}</a>
                     </div>
                 </div>
                 <p>{description? description.slice(0, 200) : "No Description"}</p>
@@ -20,6 +20,8 @@ const NftCard = ({ image, id, title, address, description, attributes }) => {
                         <div className="w-1/2 mb-2 flex justify-start flex-col">
                             <p className="mr-2 font-bold">{attribute.trait_type}:</p>
                             <p className="text-sm">{attribute.value}</p>
+                            <p className="text-sm">{attribute.discount}</p>
+                            <p className="text-sm">{attribute.color}</p>
                         </div>
                     )
                 })}
